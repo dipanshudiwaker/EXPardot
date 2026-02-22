@@ -37,7 +37,6 @@
     overflow-x: hidden;
   }
 
-  /* ── GRID OVERLAY ── */
   .grid-bg {
     position: fixed; inset: 0; z-index: -2;
     background-image:
@@ -54,7 +53,6 @@
   .orb-1 { width: 600px; height: 600px; background: #c96080; top: -250px; right: -150px; }
   .orb-2 { width: 450px; height: 450px; background: #80515b; bottom: -200px; left: -150px; }
 
-  /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -71,19 +69,8 @@
   }
 
   .nav-logo-img {
-    height: 36px; width: auto;
-  }
-
-  .nav-logo-name {
-    font-family: var(--body);
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, #ff95ac, #c96080);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    height: 44px; width: auto;
+    filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(300deg) brightness(1.2);
   }
 
   .nav-links {
@@ -123,11 +110,9 @@
 
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
 
-  /* ── SECTIONS ── */
   section { display: none; padding: 130px 5vw 90px; min-height: 100vh; }
   section.active { display: block; }
 
-  /* ── HERO ── */
   .hero {
     display: grid; place-items: center;
     text-align: center;
@@ -234,7 +219,6 @@
 
   .btn-outline:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-  /* Stats */
   .stats-row {
     display: flex; flex-wrap: wrap; justify-content: center;
     gap: 1px; border: 1px solid var(--border); border-radius: 14px;
@@ -260,7 +244,6 @@
 
   .stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
 
-  /* ── TYPOGRAPHY HELPERS ── */
   .section-tag {
     display: inline-block; font-size: 0.72rem; font-weight: 700;
     letter-spacing: 2.5px; text-transform: uppercase;
@@ -286,7 +269,6 @@
     border-radius: 2px; margin-bottom: 32px;
   }
 
-  /* ── CARD GRID ── */
   .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -317,7 +299,6 @@
 
   .card p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
 
-  /* ── ABOUT ── */
   .about-layout {
     display: grid; grid-template-columns: 1fr 1.3fr;
     gap: 60px; align-items: start;
@@ -377,7 +358,6 @@
     font-size: 0.76rem; color: var(--muted); font-weight: 500;
   }
 
-  /* ── TRAINING ── */
   .training-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -445,7 +425,6 @@
 
   .format-item p { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
 
-  /* ── PRICING ── */
   .pricing-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 18px; margin-bottom: 28px;
@@ -505,7 +484,6 @@
     font-size: 0.8rem; color: var(--muted); font-style: italic; margin-top: 10px;
   }
 
-  /* ── WHO ── */
   .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 
   .who-card {
@@ -540,7 +518,6 @@
   .yes .who-list li::before { content: '✓'; color: var(--success); font-weight: 700; }
   .no .who-list li::before { content: '✕'; color: var(--danger); font-weight: 700; }
 
-  /* ── CONTACT ── */
   .contact-layout {
     display: grid; grid-template-columns: 1fr 1.6fr;
     gap: 60px; align-items: start;
@@ -620,7 +597,6 @@
     color: var(--success); font-size: 0.875rem; font-weight: 500; text-align: center;
   }
 
-  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border); padding: 36px 5vw;
     display: flex; align-items: center; justify-content: space-between;
@@ -631,20 +607,10 @@
     display: flex; align-items: center; gap: 8px;
   }
 
-  .footer-logo-img { height: 28px; width: auto; }
-
-  .footer-name {
-    font-family: var(--body); font-weight: 800;
-    font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;
-    background: linear-gradient(135deg, #ff95ac, #c96080);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  .footer-logo-img { height: 36px; width: auto; filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(300deg) brightness(1.1); }
 
   footer p { font-size: 0.78rem; color: var(--muted); }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .about-layout { grid-template-columns: 1fr; }
     .about-avatar { max-height: 300px; }
@@ -674,12 +640,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
-    <img class="nav-logo-img"
-      src="logo.svg" alt="EXPARDOT Logo"
-    >
-    <span class="nav-logo-name">EXPARDOT</span>
+    <img class="nav-logo-img" src="logo.svg" alt="EXPARDOT Logo">
   </div>
-
   <ul class="nav-links" id="navLinks">
     <li><a onclick="showPage('home')">Home</a></li>
     <li><a onclick="showPage('about')">About</a></li>
@@ -693,7 +655,7 @@
   </button>
 </nav>
 
-<!-- ══════════════ HOME ══════════════ -->
+<!-- HOME -->
 <section id="home" class="active">
   <div class="hero">
     <div class="hero-badge">
@@ -714,7 +676,6 @@
       <a href="#" class="btn-primary" onclick="showPage('contact')">Book a Consultation</a>
       <a href="#" class="btn-outline" onclick="showPage('training')">View Training Programs</a>
     </div>
-
     <div class="stats-row">
       <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label">Years of Experience</div></div>
       <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Enterprise Projects</div></div>
@@ -736,7 +697,7 @@
   </div>
 </section>
 
-<!-- ══════════════ ABOUT ══════════════ -->
+<!-- ABOUT -->
 <section id="about">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="section-tag">About</div>
@@ -777,18 +738,16 @@
   </div>
 </section>
 
-<!-- ══════════════ TRAINING ══════════════ -->
+<!-- TRAINING -->
 <section id="training">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="section-tag">Training Programs</div>
     <h2 class="section-title">Pardot (MCAE) Training Curriculum</h2>
     <p class="section-desc">Structured for working professionals. Every module is grounded in real-world implementation experience.</p>
-
     <div class="notice-box">
       <span class="n-icon">⚠️</span>
       <p><strong>For Working Professionals Only.</strong> This training is designed for individuals already working in Salesforce, marketing automation, or CRM roles. It is not suitable for freshers, students, or those without prior professional experience.</p>
     </div>
-
     <div class="training-grid">
       <div class="module-card"><div class="module-num">Module 01</div><h3>Pardot Fundamentals & Architecture</h3><ul class="module-topics"><li>Pardot/MCAE platform overview</li><li>Business unit structure & configuration</li><li>User roles, permissions & SSO setup</li><li>Connector & tracker domain setup</li></ul></div>
       <div class="module-card"><div class="module-num">Module 02</div><h3>Lead Scoring & Grading</h3><ul class="module-topics"><li>Scoring model design & calibration</li><li>Profile-based grading framework</li><li>Automation-triggered score adjustments</li><li>Real-world scoring architectures</li></ul></div>
@@ -797,7 +756,6 @@
       <div class="module-card"><div class="module-num">Module 05</div><h3>Forms, Handlers & Preference Centers</h3><ul class="module-topics"><li>Native forms vs. form handlers</li><li>Progressive profiling setup</li><li>Custom preference center architecture</li><li>GDPR-compliant opt-in/out flows</li></ul></div>
       <div class="module-card"><div class="module-num">Module 06</div><h3>Salesforce–Pardot Sync & Troubleshooting</h3><ul class="module-topics"><li>CRM connector configuration</li><li>Field mapping & sync behavior</li><li>Sync errors, conflicts & resolution</li><li>Campaign alignment & ROI reporting</li></ul></div>
     </div>
-
     <h3 class="section-title" style="font-size:1.5rem;margin-bottom:20px;">Training Delivery Formats</h3>
     <div class="format-row">
       <div class="format-item"><div class="f-icon">🎙️</div><h4>1:1 Live Sessions</h4><p>Personalised sessions focused on your specific use case and goals</p></div>
@@ -811,13 +769,12 @@
   </div>
 </section>
 
-<!-- ══════════════ PRICING ══════════════ -->
+<!-- PRICING -->
 <section id="pricing">
   <div style="max-width:1000px;margin:0 auto;">
     <div class="section-tag">Pricing</div>
     <h2 class="section-title">Professional Rates</h2>
     <p class="section-desc">Transparent, industry-aligned fees for consulting and training. All sessions are conducted live, one-on-one or for teams.</p>
-
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-label">Consulting</div>
@@ -833,7 +790,6 @@
         </ul>
         <a href="#" class="btn-outline" style="width:100%;text-align:center;display:block;" onclick="showPage('contact')">Enquire Now</a>
       </div>
-
       <div class="pricing-card featured">
         <div class="featured-tag">Most Popular</div>
         <div class="pricing-label">Training</div>
@@ -850,7 +806,6 @@
         </ul>
         <a href="#" class="btn-primary" style="width:100%;text-align:center;display:block;" onclick="showPage('contact')">Book a Day</a>
       </div>
-
       <div class="pricing-card">
         <div class="pricing-label">Enterprise</div>
         <h3>Corporate Training</h3>
@@ -867,14 +822,13 @@
         <a href="#" class="btn-outline" style="width:100%;text-align:center;display:block;" onclick="showPage('contact')">Request a Quote</a>
       </div>
     </div>
-
     <div class="pricing-disclaimer">
       ⚠️ Disclaimer: Pricing varies based on scope, customization, training depth, and engagement type. All rates listed are indicative. Final pricing is confirmed after an initial consultation.
     </div>
   </div>
 </section>
 
-<!-- ══════════════ WHO IT'S FOR ══════════════ -->
+<!-- WHO IT'S FOR -->
 <section id="who">
   <div style="max-width:1000px;margin:0 auto;">
     <div class="section-tag">Eligibility</div>
@@ -917,7 +871,7 @@
   </div>
 </section>
 
-<!-- ══════════════ CONTACT ══════════════ -->
+<!-- CONTACT -->
 <section id="contact">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="section-tag">Contact</div>
@@ -932,7 +886,6 @@
           <div class="contact-meta-item"><div class="meta-icon">🏢</div><span>Corporate onsite delivery available (India)</span></div>
         </div>
       </div>
-
       <form id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
@@ -979,18 +932,13 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <img class="footer-logo-img"
-      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDI0IiBoZWlnaHQ9Ijc2OCIgdmlld0JveD0iMCAwIDEwMjQgNzY4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGRlc2M+Q3JlYXRlZCB3aXRoIEZhYnJpYy5qcyA2LjcuMTwvZGVzYz4KPGRlZnM+CjwvZGVmcz4KCjxnIHRyYW5zZm9ybT0ibWF0cml4KDEuNDA4NiAwIDAgMS40MDg2IDUxNC40MDI2IDQxMy4zMDYzKSIgc3R5bGU9IiIgaWQ9ImlUZXh0X3RleHRQYWlyX2ZiODJkYmViLTM3YzEtNDZmZi05YzI2LTMxNjk4NmI0NDI0NCI+CgkJPHRleHQgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZm9udC1mYW1pbHk9IkJyYW5kbWFyay1Nb250c2VycmF0IiBmb250LXNpemU9IjEwMCIgZm9udC1zdHlsZT0ibm9ybWFsIiBmb250LXdlaWdodD0iMzAwIiBzdHlsZT0ic3Ryb2tlOiBub25lOyBzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IG5vbmU7IHN0cm9rZS1saW5lY2FwOiBidXR0OyBzdHJva2UtZGFzaG9mZnNldDogMDsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLW1pdGVybGltaXQ6IDQ7IGZpbGw6IHJnYigyNTUsMjU1LDI1NSk7IGZpbGwtb3BhY2l0eTogMDsgZmlsbC1ydWxlOiBub256ZXJvOyBvcGFjaXR5OiAxOyB0ZXh0LWRlY29yYXRpb24tdGhpY2tuZXNzOiA5LjM5MDYlOyB3aGl0ZS1zcGFjZTogcHJlOyI+PHRzcGFuIHg9Ii0yNzkuNTAwMSIgeT0iMzEuNDE0Ij5FWFBBUkRPVDwvdHNwYW4+PC90ZXh0Pgo8L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KDEuNDA4NiAwIDAgMS40MDg2IDUxMiAzODQpIiBpZD0iZ2x5cGhHcm91cF90ZXh0UGFpcl9mYjgyZGJlYi0zN2MxLTQ2ZmYtOWMyNi0zMTY5ODZiNDQyNDQiPgo8ZyBzdHlsZT0iIj4KCQk8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjM4ODkgMCAwIDEuMzg4OSAtMjU0Ljk1IDApIj4KPGcgc3R5bGU9IiI+CgkJPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAwIDApIj4KPGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xNTcwNyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSA4NC43IDcwLjc3NDcpIiB4MT0iMCIgeTE9Ii0wLjg3NSIgeDI9Ijk3NC4wMzA1NTU1NTU1NTU2IiB5Mj0iLTAuODc1Ij4KPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzE1MTUxNTsiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmY5NWFjOyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cGF0aCBzdHlsZT0iZmlsbDogdXJsKCNTVkdJRF8xNTcwNyk7IG9wYWNpdHk6IDE7IiB0cmFuc2Zvcm09IiB0cmFuc2xhdGUoLTEwMS4wMDgsIC05NS45NzQ3KSIgZD0iTSAxMTcuMzE2IDkzLjk1ODcgTCA4NC43IDkzLjk1ODcgTCA4NC43IDk3LjE5ODcgTCAxMTcuMzE2IDk3LjE5ODcgWiBNIDExNy4zMTYgNzAuNzc0NyBMIDg0LjcgNzAuNzc0NyBMIDg0LjcgNzQuMDg2NyBMIDExNy4zMTYgNzQuMDg2NyBaIE0gODQuNyAxMTcuODYyNyBMIDg0LjcgMTIxLjE3NDcgTCAxMTcuMzE2IDEyMS4xNzQ3IEwgMTE3LjMxNiAxMTcuODYyNyBaIi8+CjwvZz4KPC9nPgo8L2c+CjwvZz4KPC9zdmc+"
-      alt="EXPARDOT"
-    >
-    <span class="footer-name">EXPARDOT</span>
+    <img class="footer-logo-img" src="logo.svg" alt="EXPARDOT">
   </div>
   <p>Professional Pardot (MCAE) Training & Consulting · For Working Professionals</p>
   <p style="font-size:0.74rem;">© 2025 EXPARDOT. All rights reserved.</p>
 </footer>
 
 <script>
-  // ── PAGE NAVIGATION ──
   function showPage(id) {
     document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
@@ -1002,7 +950,6 @@
     document.getElementById('navLinks').classList.toggle('open');
   }
 
-  // ── FORM SUBMIT → EMAIL via mailto + FormSubmit fallback ──
   async function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('contactForm');
@@ -1021,7 +968,6 @@
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
-    // Use FormSubmit.co to send email (no backend required)
     const formData = new FormData();
     formData.append('_to', 'dipanshudiwaker11@gmail.com');
     formData.append('_subject', `[EXPARDOT Enquiry] ${data.requirement} — ${data.name}`);
@@ -1052,17 +998,14 @@
           btn.textContent = 'Send Enquiry →';
         }, 7000);
       } else {
-        throw new Error('Form submission failed');
+        throw new Error('Failed');
       }
     } catch (err) {
-      // Fallback: open mailto
       const subject = encodeURIComponent(`[EXPARDOT Enquiry] ${data.requirement} — ${data.name}`);
       const body = encodeURIComponent(
-        `EXPARDOT Website Enquiry\n\n` +
-        `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nRole: ${data.role}\nRequirement: ${data.requirement}\n\nMessage:\n${data.message}`
+        `EXPARDOT Website Enquiry\n\nName: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nRole: ${data.role}\nRequirement: ${data.requirement}\n\nMessage:\n${data.message}`
       );
       window.location.href = `mailto:dipanshudiwaker11@gmail.com?subject=${subject}&body=${body}`;
-
       success.style.display = 'block';
       btn.style.display = 'none';
       setTimeout(() => {
