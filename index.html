@@ -886,9 +886,11 @@
           <div class="contact-meta-item"><div class="meta-icon">🏢</div><span>Corporate onsite delivery available (India)</span></div>
         </div>
       </div>
-      <form id="contactForm" onsubmit="handleSubmit(event)">
+     <!-- <form id="contactForm" onsubmit="handleSubmit(event)" method="POST">-->
+      <form action="https://api.web3forms.com/submit" method="POST">
         <div class="form-row">
           <div class="form-group">
+            <input type="hidden" name="access_key" value="910dfda2-7918-4812-a47a-765830337e37">
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" name="fullName" placeholder="Jane Smith" required>
           </div>
@@ -981,7 +983,7 @@
     formData.append('Message', data.message);
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/dipanshudiwaker11@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: formData
